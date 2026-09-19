@@ -1,0 +1,178 @@
+:root {
+  --ink: #1c1f26;
+  --muted: #667085;
+  --line: #d8dce3;
+  --accent: #2f5233;
+  --accent-soft: #e7efe8;
+  --error: #b3261e;
+  --surface: #ffffff;
+  --bg: #f3f4f6;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.wizard-shell {
+  max-width: 480px;
+  margin: 48px auto;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.wizard-title {
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+}
+
+.progress-wrap {
+  margin-bottom: 28px;
+}
+
+.progress-track {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.progress-label {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.step-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.step-fieldset legend {
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.field input {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.password-row {
+  display: flex;
+  gap: 8px;
+}
+
+.password-row input {
+  flex: 1;
+}
+
+.toggle-visibility {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 6px;
+  width: 42px;
+  cursor: pointer;
+}
+
+.review-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  font-size: 0.92rem;
+}
+
+.review-list dt {
+  color: var(--muted);
+}
+
+.review-list dd {
+  margin: 0;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.step-actions button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.step-actions button[type='submit'],
+.step-actions button:last-child {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.step-actions button:disabled {
+  background: var(--line);
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.success-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.success-card h1 {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
